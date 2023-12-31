@@ -3,12 +3,14 @@ resource "aws_instance" "expinstance" {
     associate_public_ip_address = true
     instance_type = var.instance_type
     key_name = "ysp"
+    security_groups = [ "sg-083730b909982cac3" ]
 
    connection {
      type = "ssh"
      user = "ubuntu"
      private_key = file(var.privatekey)
      host = self.public_ip
+
    }
    provisioner "remote-exec" {
     inline = [ 
