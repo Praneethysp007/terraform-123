@@ -3,7 +3,8 @@ resource "aws_instance" "expinstance" {
     associate_public_ip_address = true
     instance_type = var.instance_type
     key_name = "ysp"
-    security_groups = [ "sg-083730b909982cac3" ]
+    vpc_security_group_ids = [ "sg-083730b909982cac3" ]
+    
 
    connection {
      type = "ssh"
