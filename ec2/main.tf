@@ -8,7 +8,7 @@ resource "aws_instance" "expinstance" {
      type = "ssh"
      user = "ubuntu"
      private_key = file(var.privatekey)
-     host = self.public_ip
+     host = self.private_ip
    }
    provisioner "remote-exec" {
     inline = [ 
