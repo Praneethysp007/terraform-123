@@ -18,5 +18,5 @@ variable "publickey" {
 }
 variable "privatekey" {
   type = string
-  default = "/home/ubuntu/id_rsa"
+  default = "/home/ubuntu/.ssh/id_rsa"
 }
