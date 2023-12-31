@@ -2,12 +2,7 @@ resource "aws_instance" "expinstance" {
     ami = data.aws_ami.ubuntu.id
     associate_public_ip_address = true
     instance_type = var.instance_type
-  
-     
-  provisioner "file" {
-    source      = "/home/ubuntu/.ssh/id_rsa.pub"
-    destination = "/home/ubuntu/authorized_keys"
-  }
+    key_name = "ysp"
 
    connection {
      type = "ssh"
