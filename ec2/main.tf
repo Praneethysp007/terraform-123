@@ -2,7 +2,7 @@ resource "aws_instance" "expinstance" {
     ami = data.aws_ami.ubuntu.id
     associate_public_ip_address = true
     instance_type = var.instance_type
-    key_name = "ysp"
+  
      
   provisioner "file" {
     source      = "/home/ubuntu/.ssh/id_rsa.pub"
@@ -13,7 +13,7 @@ resource "aws_instance" "expinstance" {
      type = "ssh"
      user = "ubuntu"
      private_key = file(var.privatekey)
-     host = self.private_ip
+     host = self.public_ip
    }
    provisioner "remote-exec" {
     inline = [ 
