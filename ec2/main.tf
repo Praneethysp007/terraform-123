@@ -27,8 +27,9 @@ resource "aws_instance" "expinstance" {
     destination = "/home/ubuntu/praneeth.txt"
      
    }
-}
 
+
+}
  
   
 
