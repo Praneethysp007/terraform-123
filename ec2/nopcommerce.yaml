@@ -11,9 +11,13 @@
       ansible.builtin.dpkg_selections:
         name: packages-microsoft-prod.deb
         selection: install  
-    - name: add dotnet
+    - name: add update
       ansible.builtin.shell:
-        cmd: "sudo apt-get update && sudo apt-get install -y dotnet-sdk-7.0"
+        cmd: "sudo apt-get update"
+    - name: add dotnet
+      ansible.builtin.apt:
+        name: dotnet-sdk-7.0 
+        state: present
     - name: install nginx
       ansible.builtin.apt:
         name: nginx
