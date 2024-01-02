@@ -13,7 +13,7 @@
         selection: install  
     - name: add dotnet
       ansible.builtin.shell:
-        cmd: "sudo apt-get update && sudo apt get-install -y dotnet-sdk-7.0"
+        cmd: "sudo apt-get update && sudo apt-get install -y dotnet-sdk-7.0"
     - name: install nginx
       ansible.builtin.apt:
         name: nginx
