@@ -12,7 +12,7 @@
         name: packages-microsoft-prod.deb
         selection: install  
     - name: update packages
-      ansible.builtin.apt
+      ansible.builtin.apt:
         upgrade: yes
         update_cache: yes    
     - name: Install a list of packages
