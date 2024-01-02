@@ -15,10 +15,7 @@ resource "aws_instance" "expinstance" {
    }
    provisioner "remote-exec" {
     inline = [ 
-        "sudo apt update",
-        "sudo apt install openjdk-17-jdk -y",
-        "wget https://referenceapplicationskhaja.s3.us-west-2.amazonaws.com/spring-petclinic-2.4.2.jar",
-        "java -jar spring-petclinic-2.4.2.jar --server.port=8080"
+      
     ]
      
    }
